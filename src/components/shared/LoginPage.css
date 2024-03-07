@@ -1,0 +1,107 @@
+.login-page {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10vh;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.login-page h1 {
+  flex-shrink: 0;
+  color: #f76e11;
+  text-align: center;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.login-page form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-page input {
+  margin-bottom: 10px;
+  padding: 10px 45px 10px 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.login-page input[type="button"] {
+  margin-bottom: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #f76e11;
+  color: #f76e11;
+  background-color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.login-page input[type="button"]:hover {
+  margin-bottom: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid white;
+  color: white;
+  background-color: #f76e11;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.login-page button {
+  width: 300px;
+  height: 35px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #f76e11;
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border: none;
+  margin: 10px 0 10px 0;
+  cursor: pointer;
+}
+
+.login-page button:hover {
+  background: #fff;
+  color: #f76e11;
+  transition: background-color 0.3s;
+}
+
+.login-page img {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.login-page-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-page-wide {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-page a {
+  color: #f76e11;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-decoration: none;
+}
+
+.login-page-blank {
+  margin: 10px 0 0 0;
+}

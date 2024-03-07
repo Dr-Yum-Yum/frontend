@@ -1,0 +1,54 @@
+.map-nav-bar {
+  height: 80px;
+  background-color: #f76e11;
+  display: flex;
+  align-items: center;
+  padding: 20px 20px;
+  box-sizing: border-box;
+}
+
+.map-nav-bar em {
+  color: #fff;
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin: 0px 10px;
+}
+
+.map-nav-bar a {
+  color: #fff;
+  margin-right: 10px;
+}
+
+.loc-image {
+  width: 25px;
+  height: 25px;
+  margin-left: auto;
+  margin-right: 5px;
+}
+
+.logo-image {
+  width: 50px;
+  height: 50px;
+}
+
+.chat-nav-bar {
+  height: 80px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 20px 20px;
+  box-sizing: border-box;
+}
+
+.chat-nav-bar em {
+  color: #f76e11;
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin: 0px 10px;
+}

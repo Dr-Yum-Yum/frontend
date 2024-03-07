@@ -1,0 +1,70 @@
+.item {
+  display: flex;
+  padding: 10px;
+  box-sizing: border-box;
+  border-top: 1px solid #ccc;
+  width: 400px;
+  margin-left: 10px;
+  margin-top: 10px;
+  background-color: #fff;
+}
+
+.item .store-item:last-child {
+  margin-left: auto;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 10px;
+}
+
+.item a {
+  color: #f76e11;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin: 5px 0px;
+  text-decoration: none;
+}
+
+.item h2 {
+  color: #f76e11;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 3px 0px;
+}
+.store-item button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  background-image: url("../../img/heart_orange.png");
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.store-item button:hover {
+  background-image: url("../../img/heart_white.png");
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.store-item img {
+  width: 160px;
+  height: 130px;
+  flex-shrink: 0;
+  border-radius: 15px;
+}
+.chat-room-item img {
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  border-radius: 25px;
+}

@@ -1,0 +1,87 @@
+/* SearchBar.css */
+.map-search-bar {
+  height: 60px;
+  display: flex;
+  background-color: #f76e11;
+  padding: 0 20px 0 20px;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.map-search-bar input[type="text"] {
+  height: 50px;
+  padding: 0 10px 0 10px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 9px;
+  outline: none;
+  background-color: #fff;
+  color: #f76e11;
+  width: 100%;
+}
+
+.map-search-bar input[type="text"]::placeholder {
+  color: #f76e11;
+  opacity: 0.7;
+}
+
+.map-search-bar button {
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  background-image: url("../../img/search_white.png");
+  background-size: 35px 35px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 40px;
+  margin: 0 0 0 10px;
+}
+
+.map-search-bar button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.chat-search-bar {
+  height: 60px;
+  display: flex;
+  background-color: #fff;
+  padding: 0 20px 0 20px;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.chat-search-bar input[type="text"] {
+  height: 50px;
+  padding: 0 10px 0 10px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 9px;
+  outline: none;
+  background-color: #f76e11;
+  color: #fff;
+  width: 100%;
+}
+.chat-search-bar input[type="text"]::placeholder {
+  color: #fff;
+  opacity: 0.7;
+}
+
+.chat-search-bar button {
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  background-image: url("../../img/search.png");
+  background-size: 35px 35px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 40px;
+  margin: 0 0 0 10px;
+}
+
+.chat-search-bar button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}

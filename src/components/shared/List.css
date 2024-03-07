@@ -1,0 +1,28 @@
+.list {
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #fff;
+}
+
+#list-map {
+  height: calc(100vh - 220px);
+}
+#list-chat {
+  height: calc(100vh - 190px);
+}
+.list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.list::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
