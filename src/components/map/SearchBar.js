@@ -8,10 +8,21 @@ var ps = new window.kakao.maps.services.Places();
 var infowindow = new window.kakao.maps.InfoWindow({ zIndex: 1 });
 
 // CallBack: 장소검색 완료 시 호출
-function placesSearchCB(data, status, pagination) {
+function placesSearchCB(data, status, updateStores, pagination) {
   if (status === window.kakao.maps.services.Status.OK) {
+    // 검색 결과 매핑
+    const newStores = data.map((place, index) => ({
+      id: index, // 고유 ID
+      name: place.place_name,
+      rating: "★★★★",
+      hours: "09:00-22:00",
+      telephone: place.phone,
+    }));
+
+    // 상위 컴포넌트의 상태 업데이트 함수 호출
+    updateStores(newStores);
     displayPlaces(data);
-    displayPagination(pagination);
+    //displayPagination(pagination);
   } else if (status === window.kakao.maps.services.Status.ZERO_RESULT) {
     alert("검색 결과가 존재하지 않습니다.");
     return;
@@ -23,11 +34,7 @@ function placesSearchCB(data, status, pagination) {
 
 // 검색 결과 목록 및 마커 표시
 function displayPlaces(places) {
-  var listEl = document.getElementById("placesList"),
-    menuEl = document.getElementById("menu_wrap"),
-    fragment = document.createDocumentFragment(),
-    bounds = new window.kakao.maps.LatLngBounds(),
-    listStr = "";
+  var bounds = new window.kakao.maps.LatLngBounds();
 
   for (var i = 0; i < places.length; i++) {
     // 마커 생성 및 지도에 표시
@@ -130,7 +137,7 @@ function displayPagination(pagination) {
   }
 }
 
-function SearchBar() {
+function SearchBar(props) {
   const [keyword, setKeyword] = useState("");
 
   const searchPlaces = () => {
@@ -144,7 +151,9 @@ function SearchBar() {
     }
 
     // 키워드 검색 요청
-    ps.keywordSearch(searchPlace, placesSearchCB);
+    ps.keywordSearch(searchPlace, (data, status) =>
+      placesSearchCB(data, status, props.updateStores)
+    ); // props.updateStores를 콜백에 전달
   };
 
   const handleInputChange = (e) => {

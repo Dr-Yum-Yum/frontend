@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MapNavBar from "./components/map/NavBar";
 import MapSearchBar from "./components/map/SearchBar";
@@ -22,15 +22,12 @@ import ChatMenuBar from "./components/chat/MenuBar";
 import "./App.css";
 
 function App() {
-  const stores = [
-    { id: 1, name: "식당1", rating: "★★★★", hours: "09:00-22:00" },
-    { id: 2, name: "식당2", rating: "★★★☆", hours: "10:00-20:00" },
-    { id: 3, name: "식당3", rating: "★★★★☆", hours: "11:00-21:00" },
-    { id: 4, name: "식당4", rating: "★★★", hours: "12:00-22:00" },
-    { id: 5, name: "식당5", rating: "★★☆☆", hours: "09:30-23:00" },
-    { id: 6, name: "식당6", rating: "★★★★★", hours: "08:00-22:00" },
-    { id: 7, name: "식당7", rating: "★★☆", hours: "07:00-19:00" },
-  ];
+  const [stores, setStores] = useState([]);
+
+  // 검색 결과 업데이트
+  const updateStores = (newStores) => {
+    setStores(newStores);
+  };
 
   const chatRooms = [
     {
@@ -166,7 +163,7 @@ function App() {
               <div>
                 <div className="main-side-map">
                   <MapNavBar />
-                  <MapSearchBar />
+                  <MapSearchBar updateStores={updateStores} />
                   <MapMenuBar />
                   <FilterBar />
                   <StoreList stores={stores} />
