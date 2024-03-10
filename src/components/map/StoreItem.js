@@ -10,6 +10,7 @@ function StoreItem({ store }) {
       <div className="item-info">
         <a>{store.name}</a>
         <h2>{store.rating}</h2>
+        <h2>{store.address}</h2>
         <h2>{store.hours}</h2>
         <h2>{store.telephone}</h2>
       </div>

@@ -15,6 +15,7 @@ function placesSearchCB(data, status, pagination, updateStores) {
       id: index, // 고유 ID
       name: place.place_name,
       rating: "★★★★",
+      address: place.road_address_name,
       hours: "09:00-22:00",
       telephone: place.phone,
     }));
