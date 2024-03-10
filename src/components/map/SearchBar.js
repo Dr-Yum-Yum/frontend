@@ -8,7 +8,7 @@ var ps = new window.kakao.maps.services.Places();
 var infowindow = new window.kakao.maps.InfoWindow({ zIndex: 1 });
 
 // CallBack: 장소검색 완료 시 호출
-function placesSearchCB(data, status, updateStores, pagination) {
+function placesSearchCB(data, status, pagination, updateStores) {
   if (status === window.kakao.maps.services.Status.OK) {
     // 검색 결과 매핑
     const newStores = data.map((place, index) => ({
@@ -151,8 +151,8 @@ function SearchBar(props) {
     }
 
     // 키워드 검색 요청
-    ps.keywordSearch(searchPlace, (data, status) =>
-      placesSearchCB(data, status, props.updateStores)
+    ps.keywordSearch(searchPlace, (data, status, pagination) =>
+      placesSearchCB(data, status, pagination, props.updateStores)
     ); // props.updateStores를 콜백에 전달
   };
 

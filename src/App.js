@@ -203,20 +203,4 @@ function App() {
   );
 }
 
-function MainLayout({ stores, chatRooms }) {
-  return (
-    <div className="main">
-      <div className="main-side-chat">
-        <ChatNavBar />
-        <ChatSearchBar />
-        <ChatMenuBar />
-        <Routes>
-          <Route index element={<ChatRoomList chatRooms={chatRooms} />} />
-          <Route path="chatRoomId" element={<ChatRoomPage />} />
-        </Routes>
-      </div>
-    </div>
-  );
-}
-
 export default App;
