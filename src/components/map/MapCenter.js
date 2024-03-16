@@ -4,7 +4,7 @@ import { Map } from "react-kakao-maps-sdk";
 import "./MapCenter.css";
 
 function MapCenter() {
-  const [center, setCenter] = useState({ lat: 33.5563, lng: 126.79581 });
+  const [center, setCenter] = useState({ lat: 37.5642135, lng: 127.0016985 });
   const [level, setLevel] = useState(3);
   const [mapKey, setMapKey] = useState(0); // mapKey 상태 추가
 

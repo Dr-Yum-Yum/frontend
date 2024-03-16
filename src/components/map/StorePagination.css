@@ -1,17 +1,12 @@
 .map-pagination {
   display: flex;
-  height: 50px;
   color: #f76e11;
   list-style-type: none;
   justify-content: center;
-  border-top: 1px solid #ccc;
 }
 
 .page-item {
   margin-right: 5px;
-  margin-top: 10px;
-  height: 30px;
-  width: 30px;
   text-align: center;
   align-items: center;
 }
@@ -19,8 +14,6 @@
 .page-link {
   text-decoration: none;
   text-align: center;
-  height: 30px;
-  width: 30px;
   margin-right: 10px;
   color: #f76e11;
   padding: 5px 10px;
