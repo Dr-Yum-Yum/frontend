@@ -4,9 +4,9 @@ import StorePagination from "./StorePagination";
 import "../shared/List.css";
 
 function StoreList({ stores }) {
-  // 가정: 한 페이지에 음식점 10개
+  // 가정: 한 페이지에 음식점 15개
   const [currentPage, setCurrentPage] = useState(1);
-  const storesPerPage = 10;
+  const storesPerPage = 15;
 
   // 현재 페이지에 보여줄 음식점
   const indexOfLastStore = currentPage * storesPerPage;
