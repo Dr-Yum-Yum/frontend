@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { Map } from "react-kakao-maps-sdk";
+import React, { useEffect, useState } from "react";
+import { Map, MapMarker, MapInfoWindow } from "react-kakao-maps-sdk";
 
 import "./MapCenter.css";
 
-function MapCenter() {
+function MapCenter({ stores }) {
   const [center, setCenter] = useState({ lat: 37.5642135, lng: 127.0016985 });
   const [level, setLevel] = useState(3);
   const [mapKey, setMapKey] = useState(0); // mapKey 상태 추가
@@ -31,7 +31,15 @@ function MapCenter() {
 
   return (
     <div className="map-center">
-      <Map id="map" center={center} level={level} key={mapKey} />
+      <Map id="map" center={center} level={level} key={mapKey}>
+        <MapMarker position={center} />
+        {stores.map((store, index) => (
+          <MapMarker
+            key={index}
+            position={{ lat: store.lat, lng: store.lng }}
+          ></MapMarker>
+        ))}
+      </Map>
       <button
         onClick={moveToCurrentLocation}
         className="map-center-button"

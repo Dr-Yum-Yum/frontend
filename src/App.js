@@ -172,7 +172,7 @@ function App() {
                 </div>
               </div>
               <div className="main-map">
-                <MapCenter></MapCenter>
+                <MapCenter stores={stores}></MapCenter>
               </div>
               <div className="main-side-chat">
                 <ChatNavBar />
