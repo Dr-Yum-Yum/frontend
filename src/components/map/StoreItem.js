@@ -1,14 +1,17 @@
 import React from "react";
 import "../shared/Item.css";
 
-function StoreItem({ store }) {
+function StoreItem({ store, storeNumber }) {
   return (
     <div className="item">
       <div className="store-item">
         <img src={require("../../img/test_table.png")} alt={store.name} />
       </div>
       <div className="item-info">
-        <a>{store.name}</a>
+        <a>
+          <span className="store-number">{storeNumber}</span>
+          {store.name}
+        </a>
         <h2>{store.rating}</h2>
         <h2>{store.address}</h2>
         <h2>{store.hours}</h2>

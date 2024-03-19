@@ -14,8 +14,8 @@ function StoreList({ stores, pagination }) {
 
   return (
     <div id="list-map" className="list">
-      {stores.map((store) => (
-        <StoreItem key={store.id} store={store} />
+      {stores.map((store, index) => (
+        <StoreItem key={store.id} store={store} storeNumber={index + 1} />
       ))}
       <StorePagination
         currentPage={currentPage}
