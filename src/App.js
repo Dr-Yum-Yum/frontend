@@ -23,10 +23,12 @@ import "./App.css";
 
 function App() {
   const [stores, setStores] = useState([]);
+  const [pagination, setPagination] = useState({});
 
   // 검색 결과 업데이트
-  const updateStores = (newStores) => {
+  const updateStores = (newStores, paginationEl) => {
     setStores(newStores);
+    setPagination(paginationEl);
   };
 
   const chatRooms = [
@@ -166,7 +168,7 @@ function App() {
                   <MapSearchBar updateStores={updateStores} />
                   <MapMenuBar />
                   <FilterBar />
-                  <StoreList stores={stores} />
+                  <StoreList stores={stores} pagination={pagination} />
                 </div>
               </div>
               <div className="main-map">

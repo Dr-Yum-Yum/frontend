@@ -21,9 +21,9 @@ function placesSearchCB(data, status, pagination, updateStores) {
     }));
 
     // 상위 컴포넌트의 상태 업데이트 함수 호출
-    updateStores(newStores);
+    updateStores(newStores, pagination);
     displayPlaces(data);
-    //displayPagination(pagination);
+    displayPagination(pagination);
   } else if (status === window.kakao.maps.services.Status.ZERO_RESULT) {
     alert("검색 결과가 존재하지 않습니다.");
     return;
@@ -42,12 +42,11 @@ function displayPlaces(places) {
     var placePosition = new window.kakao.maps.LatLng(places[i].y, places[i].x),
       marker = addMarker(placePosition, i),
       itemEl = getListItem(i, places[i]); // 검색 결과 항목 Element 생성
-    console.log(itemEl);
     // 검색된 장소 위치를 기준으로 지도 범위 재설정: LatLngBounds 객체에 좌표 추가
     bounds.extend(placePosition);
 
     // Mouseover: 인포윈도우 표시
-    // Mouseou; 인포윈도우 닫기
+    // Mouseout; 인포윈도우 닫기
     (function (marker, title) {
       window.kakao.maps.event.addListener(marker, "mouseout", function () {
         infowindow.close();

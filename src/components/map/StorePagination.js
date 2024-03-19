@@ -3,8 +3,8 @@ import "./StorePagination.css";
 
 function StorePagination({ currentPage, totalPages, onPageChange }) {
   // 페이지 번호 생성함수
-  const pageNumbers = [];
-  for (let i = 1; i <= totalPages; i++) {
+  const pageNumbers = [1];
+  for (let i = 2; i <= totalPages; i++) {
     pageNumbers.push(i);
   }
 
