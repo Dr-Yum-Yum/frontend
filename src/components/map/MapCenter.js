@@ -8,6 +8,17 @@ function MapCenter({ stores }) {
   const [level, setLevel] = useState(3);
   const [mapKey, setMapKey] = useState(0); // mapKey 상태 추가
 
+  useEffect(() => {
+    if (stores.length > 0) {
+      const firstStore = stores[0];
+      setCenter({
+        lat: firstStore.lat,
+        lng: firstStore.lng,
+      });
+      setLevel(3);
+    }
+  }, [stores]);
+
   const moveToCurrentLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
