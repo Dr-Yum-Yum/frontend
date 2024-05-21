@@ -7,6 +7,7 @@ function MapCenter({ stores }) {
   const [center, setCenter] = useState({ lat: 37.5642135, lng: 127.0016985 });
   const [level, setLevel] = useState(3);
   const [mapKey, setMapKey] = useState(0); // mapKey 상태 추가
+  const [hoveredStore, setHoveredStore] = useState(null);
 
   useEffect(() => {
     if (stores.length > 0) {
@@ -43,12 +44,21 @@ function MapCenter({ stores }) {
   return (
     <div className="map-center">
       <Map id="map" center={center} level={level} key={mapKey}>
-        <MapMarker position={center} />
         {stores.map((store, index) => (
           <MapMarker
             key={index}
-            position={{ lat: store.lat, lng: store.lng }}
-          ></MapMarker>
+            position={{
+              lat: store.lat,
+              lng: store.lng,
+            }}
+            onMouseOver={() => setHoveredStore(store)}
+            onMouseOut={() => setHoveredStore(null)}
+            onClick={() => {
+              window.open(`https://place.map.kakao.com/${store.id}`, "_blank");
+            }}
+          >
+            {hoveredStore === store && <div>{store.name}</div>}
+          </MapMarker>
         ))}
       </Map>
       <button
