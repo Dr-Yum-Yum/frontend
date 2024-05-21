@@ -2,7 +2,7 @@ import React from "react";
 import "../shared/NavBar.css";
 import logo_white from "../../img/logo_white.png";
 
-function NavBar() {
+function NavBar({ location }) {
   return (
     <nav>
       <div className="map-nav-bar">
@@ -12,7 +12,7 @@ function NavBar() {
           src={require("../../img/marker_white.png")}
           className="loc-image"
         />
-        <a>지역 선택</a>
+        <a>{location}</a>
       </div>
     </nav>
   );

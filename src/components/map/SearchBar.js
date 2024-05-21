@@ -44,9 +44,11 @@ function SearchBar(props) {
     }
 
     // 키워드 검색 요청
-    ps.keywordSearch(searchPlace, (data, status, pagination) =>
-      placesSearchCB(data, status, pagination, props.updateStores)
-    ); // props.updateStores를 콜백에 전달
+    ps.keywordSearch(searchPlace, (data, status, pagination) => {
+      const curAddress = data[0].road_address_name.split(" ");
+      props.updateAddress(`${curAddress[0]} ${curAddress[1]}`);
+      placesSearchCB(data, status, pagination, props.updateStores);
+    }); // props.updateStores를 콜백에 전달
   };
 
   const handleInputChange = (e) => {

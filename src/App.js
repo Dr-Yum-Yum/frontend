@@ -24,6 +24,11 @@ import "./App.css";
 function App() {
   const [stores, setStores] = useState([]);
   const [pagination, setPagination] = useState({});
+  const [curAddress, setCurAddress] = useState("");
+
+  const updateAddress = (address) => {
+    setCurAddress(address);
+  };
 
   // 검색 결과 업데이트
   const updateStores = (newStores, paginationEl) => {
@@ -164,8 +169,11 @@ function App() {
             <div className="main">
               <div>
                 <div className="main-side-map">
-                  <MapNavBar />
-                  <MapSearchBar updateStores={updateStores} />
+                  <MapNavBar location={curAddress} />
+                  <MapSearchBar
+                    updateStores={updateStores}
+                    updateAddress={updateAddress}
+                  />
                   <MapMenuBar />
                   <FilterBar />
                   <StoreList stores={stores} pagination={pagination} />
